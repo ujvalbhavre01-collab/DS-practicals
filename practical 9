@@ -1,0 +1,229 @@
+#include <stdio.h>
+#include<conio.h>
+#include <stdlib.h>
+struct Node {
+ int data;
+ struct Node* left;
+ struct Node* right;
+};
+// Function to create a new node
+struct Node* createNode(int value) {
+ struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
+ newNode->data = value;
+ newNode->left = NULL;
+ newNode->right = NULL;
+ return newNode;
+}
+struct Node* insert(struct Node* root, int value) {
+ if (root == NULL) {
+ return createNode(value);
+ }
+ if (value < root->data) {
+ root->left = insert(root->left, value);
+ } else if (value > root->data) {
+ root->right = insert(root->right, value);
+ }
+ return root;
+}
+void inorder(struct Node* root) { if (root != NULL) {
+ inorder(root->left);
+ printf("%d ", root->data);
+ inorder(root->right);
+ }
+}
+void main() {
+ struct Node* root = NULL;
+ root = insert(root, 50);
+ insert(root, 30);
+ insert(root, 70);
+ insert(root, 20);
+ insert(root, 40);
+ insert(root, 60);
+ insert(root, 80);
+ printf("Inorder traversal of BST: ");
+ inorder(root);
+ getch();
+}
+
+//output 
+        1 To see list
+        2 For insertion at starting
+        3 For insertion at end
+        4 For insertion at any position
+        5 For deletion of first element
+        6 For deletion of last element
+        7 For deletion of element at any position
+        8 To exit
+
+Enter Choice :
+2
+
+Enter number to be inserted: 10
+
+        1 To see list
+        2 For insertion at starting
+        3 For insertion at end
+        4 For insertion at any position
+        5 For deletion of first element
+        6 For deletion of last element
+        7 For deletion of element at any position
+        8 To exit
+
+Enter Choice :
+3
+
+Enter number to be inserted: 20
+
+        1 To see list
+        2 For insertion at starting
+        3 For insertion at end
+        4 For insertion at any position
+        5 For deletion of first element
+        6 For deletion of last element
+        7 For deletion of element at any position
+        8 To exit
+
+Enter Choice :
+3
+
+Enter number to be inserted: 30
+
+        1 To see list
+        2 For insertion at starting
+        3 For insertion at end
+        4 For insertion at any position
+        5 For deletion of first element
+        6 For deletion of last element
+        7 For deletion of element at any position
+        8 To exit
+
+Enter Choice :
+1
+Data = 10
+Data = 20
+Data = 30
+
+        1 To see list
+        2 For insertion at starting
+        3 For insertion at end
+        4 For insertion at any position
+        5 For deletion of first element
+        6 For deletion of last element
+        7 For deletion of element at any position
+        8 To exit
+
+Enter Choice :
+4
+
+Enter position : 2
+
+Enter number to be inserted: 15
+
+        1 To see list
+        2 For insertion at starting
+        3 For insertion at end
+        4 For insertion at any position
+        5 For deletion of first element
+        6 For deletion of last element
+        7 For deletion of element at any position
+        8 To exit
+
+Enter Choice :
+1
+Data = 10
+Data = 15
+Data = 20
+Data = 30
+
+        1 To see list
+        2 For insertion at starting
+        3 For insertion at end
+        4 For insertion at any position
+        5 For deletion of first element
+        6 For deletion of last element
+        7 For deletion of element at any position
+        8 To exit
+
+Enter Choice :
+5
+
+        1 To see list
+        2 For insertion at starting
+        3 For insertion at end
+        4 For insertion at any position
+        5 For deletion of first element
+        6 For deletion of last element
+        7 For deletion of element at any position
+        8 To exit
+
+Enter Choice :
+1
+Data = 15
+Data = 20
+Data = 30
+
+        1 To see list
+        2 For insertion at starting
+        3 For insertion at end
+        4 For insertion at any position
+        5 For deletion of first element
+        6 For deletion of last element
+        7 For deletion of element at any position
+        8 To exit
+
+Enter Choice :
+6
+
+        1 To see list
+        2 For insertion at starting
+        3 For insertion at end
+        4 For insertion at any position
+        5 For deletion of first element
+        6 For deletion of last element
+        7 For deletion of element at any position
+        8 To exit
+
+Enter Choice :
+1
+Data = 15
+Data = 20
+
+        1 To see list
+        2 For insertion at starting
+        3 For insertion at end
+        4 For insertion at any position
+        5 For deletion of first element
+        6 For deletion of last element
+        7 For deletion of element at any position
+        8 To exit
+
+Enter Choice :
+7
+
+Enter position :
+2
+
+        1 To see list
+        2 For insertion at starting
+        3 For insertion at end
+        4 For insertion at any position
+        5 For deletion of first element
+        6 For deletion of last element
+        7 For deletion of element at any position
+        8 To exit
+
+Enter Choice :
+1
+Data = 15
+
+        1 To see list
+        2 For insertion at starting
+        3 For insertion at end
+        4 For insertion at any position
+        5 For deletion of first element
+        6 For deletion of last element
+        7 For deletion of element at any position
+        8 To exit
+
+Enter Choice :
+8
